@@ -1,7 +1,9 @@
 const mongoose = require("mongoose");
-const url = process.env.MONGO_URL;
+const dotenv = require("dotenv");
+dotenv.config();
+const DB = process.env.MONGO_URL;
 mongoose
-  .connect(, { useNewUrlParser: true })
+  .connect(DB, { useNewUrlParser: true })
   .catch((e) => {
     console.error("Connection error", e.message);
   });
