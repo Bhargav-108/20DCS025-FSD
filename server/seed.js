@@ -1,9 +1,11 @@
 const { faker } = require("@faker-js/faker");
 const MongoClient = require("mongodb").MongoClient;
 const _ = require("lodash");
-
+const dotenv = require("dotenv");
+dotenv.config();
+const DB = process.env.MONGO_URL;
 async function main() {
-  const uri = "";
+  const uri = "DB";
   const client = new MongoClient(uri);
 
   try {
